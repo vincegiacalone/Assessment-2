@@ -35,6 +35,13 @@ const cart = [
 
 //CODE HERE
 
+const calculateTotal = (cart) => {
+    const total = cart.reduce((accumulator, item) => {
+        return accumulator + item.price;
+    }, 0);
+    return total;
+};
+
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
 
@@ -55,6 +62,11 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    const taxAmount = cartTotal * (tax / 100);
+    const finalPrice = cartTotal - couponValue + taxAmount;
+    return finalPrice;
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -80,6 +92,14 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+firstName: This represents the first name of the customer. It will be a string data type because names are (normally) alphanumeric characters.
+
+lastName: This represents the last name of the customer. Like the firstName property, it should also be a string data type.
+
+email: This will store the email address of the customer. It will be a string data type, as email addresses are sequences of alphanumeric characters and symbols.
+
+address: This property contains the customer's address for delivery. It will be an object with sub-properties like the street, city, state, and zipCode. The address property itself can be an object data type to organize related information in a structured manner.
+
 */
 
 /*
@@ -88,3 +108,15 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        state: "CA",
+        zipCode: "12345"
+    }
+};
